@@ -49,10 +49,10 @@ class TicTacToe
   end
 
   def play
-    turn(@board) until over?(@board)
-    if won?(@board)
+    turn until over?
+    if won?
       puts "Congratulations #{winner(board)}!"
-    elsif draw?(@board)
+    elsif draw?
       puts "Cat's Game!"
     end
   end
@@ -94,11 +94,11 @@ class TicTacToe
   end
 
   def over?
-    draw?(@board) || won?(@board)
+    draw? || won?
   end
 
   def winner
-    if win_combo = won?(@board)
+    if win_combo = won?
       @board[win_combo.first]
     end
   end
